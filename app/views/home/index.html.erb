@@ -1,0 +1,4 @@
+<%= link_to_if(session[:current_user_id].nil?, "Sign Up", { controller: "users", action: "new" }) %>
+<%= link_to_if(session[:current_user_id].nil?, "Log In", { controller: "home", action: "login" }) %>
+
+<%= link_to("View Users", { controller: "users", action: "index" }) %>
