@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   get 'home/index'
   get 'home/login' => 'home#login'
+  get 'home/logout' => 'home#logout'
+
+  controller :home do
+    post 'home/login' => 'home#authenticate'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

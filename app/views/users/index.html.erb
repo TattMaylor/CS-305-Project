@@ -1,5 +1,9 @@
+<h1>Registered Users</h1>
+
 <ul>
-<%= @users.each do |user| %>
+<% @users.each do |user| %>
 	<li><%= user.email %></li>
 <% end %>
 </ul>
+
+<%= link_to "Back", { controller: "home", action: "index" } %>
