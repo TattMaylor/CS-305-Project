@@ -1,5 +1,23 @@
-<%= link_to_if(session[:current_user_id].nil?, "Sign Up", { controller: "users", action: "new" }) %>
-<%= link_to_if(session[:current_user_id].nil?, "Log In", { controller: "home", action: "login" }) %>
-<%= link_to_unless(session[:current_user_id].nil?, "Log Out", { controller: "home", action: "logout" }) %>
+<!DOCTYPE html>
+<html lang="en">
 
-<%= link_to("View Users", { controller: "users", action: "index" }) %>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track' => true %>
+</head>
+
+<div class="pills">
+	<ul class="nav nav-pills">
+		<li class="active"><%= link_to_if(session[:current_user_id].nil?, "Sign Up", { controller: "users", action: "new" }) %></li>
+		<li><%= link_to_if(session[:current_user_id].nil?, "Log In", { controller: "home", action: "login" }) %></li>
+		<li><%= link_to_if(session[:current_user_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
+		<li><%= link_to("View Users", { controller: "users", action: "index" }) %></li>
+ 	</ul>
+</div>
+
+<div class="jumbotron">
+  <h1><STRONG>Become a Junior Master Gardener</STRONG></h1>
+  <h2>Just like Matt Taylor and Zach Litteral</h2>
+</div>
+
+</html>

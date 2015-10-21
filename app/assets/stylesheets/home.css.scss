@@ -1,0 +1,28 @@
+@import "bootstrap";
+
+body {
+	color: white;
+	font-size: 20px;
+	background-color: #003300;
+}
+	
+.jumbotron {
+	text-align: center;
+	background-color: #006600;
+	opacity: 1.0;
+}
+
+.nav-pills {
+	margin: 30px;
+    display: table;
+    table-layout: fixed;
+    float: center;
+}
+
+.nav-pills>li>a {
+	color: white;
+}
+
+.nav-pills>li>a:hover {
+	color: #3399CC;
+}
