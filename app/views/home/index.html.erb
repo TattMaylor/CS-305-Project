@@ -10,7 +10,7 @@
 	<ul class="nav nav-pills">
 		<li class="active"><%= link_to_if(session[:current_user_id].nil?, "Sign Up", { controller: "users", action: "new" }) %></li>
 		<li><%= link_to_if(session[:current_user_id].nil?, "Log In", { controller: "home", action: "login" }) %></li>
-		<li><%= link_to_if(session[:current_user_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
+		<li><%= link_to_unless(session[:current_user_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
 		<li><%= link_to("View Users", { controller: "users", action: "index" }) %></li>
  	</ul>
 </div>
