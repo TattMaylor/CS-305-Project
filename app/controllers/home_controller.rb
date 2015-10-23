@@ -38,5 +38,6 @@ class HomeController < ApplicationController
     end
 
     @teachers = Teacher.all
+    @students = Student.all
   end
 end

@@ -21,6 +21,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Home", { controller: "home", action: "dashboard" }) %></li>
+          <li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Create Student", { controller: "students", action: "new" }) %></li>
 					<li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Create Teacher", { controller: "teachers", action: "new" }) %></li>
 					<li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
 				</ul>
@@ -34,17 +35,41 @@
          <H3><center><b>Teacher Accounts</b></center></H3>
       </TH>
    </TR>
-      <TH>First Name</TH>
-      <TH>Last Name</TH>
-      <TH>Email</TH>
-      <TH>Super</TH>
+      <TH><center>First Name</center></TH>
+      <TH><center>Last Name</center></TH>
+      <TH><center>Email</center></TH>
+      <TH><center>Super</center></TH>
 <ul>
 <% @teachers.each do |teacher| %>
    <TR>
-      <TD> <%= teacher.firstname %></TD>
-      <TD> <%= teacher.lastname %></TD>
-      <TD> <%= teacher.email %></TD>
-      <TD> <%= teacher.super %> </TD>
+      <TD><center> <%= teacher.firstname %></center></TD>
+      <TD><center> <%= teacher.lastname %></center></TD>
+      <TD><center> <%= teacher.email %></center></TD>
+      <TD><center> <%= teacher.super %></center> </TD>
+   </TR>
+<% end %>
+</TABLE>
+</center>
+</ul>
+
+<center>
+<TABLE  BORDER="5" WIDTH="50%"   CELLPADDING="4" CELLSPACING="3">
+   <TR>
+      <TH COLSPAN="4">
+         <H3><center><b>Student Accounts</b></center></H3>
+      </TH>
+   </TR>
+      <TH><center>First Name</center></TH>
+      <TH><center>Last Name</center></TH>
+      <TH><center>Study ID</center></TH>
+      <TH><center>Enrollment Status</center></TH>
+<ul>
+<% @students.each do |student| %>
+   <TR>
+      <TD><center> <%= student.firstname %></center></TD>
+      <TD><center><%= student.lastname %></center></TD>
+      <TD><center> <%= student.sid %></center></TD>
+      <TD><center> <%= student.enrollment %></center></TD>
    </TR>
 <% end %>
 </TABLE>

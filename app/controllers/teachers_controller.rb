@@ -11,7 +11,7 @@ class TeachersController < ApplicationController
 
     @teacher = Teacher.new(params.require(:newteacher).permit(:firstname, :lastname, :email, :new_password, :new_password_confirmation, :super_box))
     
-    if :super_box == 1
+    if :super_box == 0
     	@teacher.super = true;
     else
       @teacher.super = false;

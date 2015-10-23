@@ -3,13 +3,13 @@
 one:
   firstname: MyString
   lastname: MyString
+  sid: MyString
   password: MyString
-  studyid: MyString
-  enrolled: MyString
+  enrollment: MyString
 
 two:
   firstname: MyString
   lastname: MyString
+  sid: MyString
   password: MyString
-  studyid: MyString
-  enrolled: MyString
+  enrollment: MyString
