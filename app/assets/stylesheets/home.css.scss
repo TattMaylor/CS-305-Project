@@ -1,29 +1,49 @@
 @import "bootstrap";
 
 body {
-	color: white;
 	font-size: 20px;
-	background-color: #003300;
+	background-color: #ECEDED;
 }
 	
 .jumbotron {
+	color: 27D6B3;
 	text-align: center;
-	background-color: #006600;
+	background-color: #41D680;
 	opacity: 1.0;
-	text-shadow: black 0.3em 0.3em 0.3em;
+	/*text-shadow: black 0.1em 0.2em 0.3em;*/
+	font-size: 48px
 }
 
-.nav-pills {
-	margin: 30px;
-    display: table;
-    table-layout: fixed;
-    float: center;
+.form-group {
+	color: black;
 }
 
-.nav-pills>li>a {
+.btn{
+	background-color: #41D680;
+}
+
+.navbar, .navbar-inverse {
+	border-radius: 0;
+	border: none;
+	margin-bottom: 0;
+	min-height: 40px;
+}
+
+.nav li {
+	display: inline;
 	color: white;
 }
 
-.nav-pills>li>a:hover {
-	color: #3399CC;
+.navbar-inverse .navbar-nav > li > a {
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 1.7em;
+	font-weight: 200;
+	padding: 30px 25px 33px 25px;
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+	background-color: #444444;
+	transition: 0.7s all linear;
+	height: 100%;
 }

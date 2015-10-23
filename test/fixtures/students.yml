@@ -3,15 +3,13 @@
 one:
   firstname: MyString
   lastname: MyString
-  email: MyString
   password: MyString
-  activity: false
-  super: false
+  studyid: MyString
+  enrolled: MyString
 
 two:
   firstname: MyString
   lastname: MyString
-  email: MyString
   password: MyString
-  activity: false
-  super: false
+  studyid: MyString
+  enrolled: MyString

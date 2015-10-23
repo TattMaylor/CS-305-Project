@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
+</head>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="container">
+         <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Home", { controller: "home", action: "dashboard" }) %></li>
+					<li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Create Teacher", { controller: "teachers", action: "new" }) %></li>
+					<li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
+				</ul>
+			</div>
+		</nav>
+
+<center>
+<TABLE  BORDER="5" WIDTH="50%"   CELLPADDING="4" CELLSPACING="3">
+   <TR>
+      <TH COLSPAN="4">
+         <H3><center><b>Teacher Accounts</b></center></H3>
+      </TH>
+   </TR>
+      <TH>First Name</TH>
+      <TH>Last Name</TH>
+      <TH>Email</TH>
+      <TH>Super</TH>
+<ul>
+<% @teachers.each do |teacher| %>
+   <TR>
+      <TD> <%= teacher.firstname %></TD>
+      <TD> <%= teacher.lastname %></TD>
+      <TD> <%= teacher.email %></TD>
+      <TD> <%= teacher.super %> </TD>
+   </TR>
+<% end %>
+</TABLE>
+</center>
+</ul>
+
