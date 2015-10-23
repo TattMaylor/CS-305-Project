@@ -27,6 +27,10 @@
 			</div>
 		</nav>
 
+<br>
+<br>
+  <center><h1>Create A New Teacher</h1></center>
+
 <%= form_for :newteacher, url: teachers_new_path do |f| %>
 
   <% if @teacher.errors.any? %>
@@ -36,6 +40,11 @@
     <% end %>
     </ul>
   <% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="Absolute-Center is-Responsive">
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
 
 <%= f.label :firstname, 'First Name' %>
 <%= f.text_field :firstname %>
@@ -56,4 +65,8 @@
 <%= f.label :super_box, "Super Teacher" %>
 
 <%= f.submit "Create" %>
+</div>
+</div>
+</div>
+</div>
 <% end %>

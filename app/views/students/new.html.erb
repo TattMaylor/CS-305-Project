@@ -20,12 +20,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Home", { controller: "home", action: "dashboard" }) %></li>
-					<li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Manage Accounts", { controller: "home", action: "manage" }) %></li>	
-					<li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Logout", { controller: "home", action: "logout" }) %></li>
+					<li ><%= link_to_unless(session[:current_user_id].nil?, "Home", { controller: "home", action: "dashboard" }) %></li>
+					<li ><%= link_to_unless(session[:current_user_id].nil?, "Manage Accounts", { controller: "home", action: "manage" }) %></li>	
+					<li ><%= link_to_unless(session[:current_user_id].nil?, "Logout", { controller: "home", action: "logout" }) %></li>
 				</ul>
 			</div>
 		</nav>
+<br>
+<br>
+  <center><h1>Create A New Student</h1></center>
+
 
 <%= form_for :newstudent, url: students_new_path do |f| %>
 
@@ -36,7 +40,10 @@
     <% end %>
     </ul>
   <% end %>
-
+<div class="container">
+  <div class="row">
+    <div class="Absolute-Center is-Responsive">
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
 <%= f.label :firstname, 'First Name' %>
 <%= f.text_field :firstname %>
 
@@ -52,5 +59,9 @@
 <%= f.label :new_password_confirmation, 'Confirm Password' %>
 <%= f.password_field :new_password_confirmation %>
 
-<%= f.submit "Create" %>
+<center><%= f.submit "Create" %></center>
+</div>
+</div>
+</div>
+</div>
 <% end %>

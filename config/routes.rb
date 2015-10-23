@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'home/manage'
   get 'teachers/new'
   get 'students/new'
+  get 'home/game'
 
   controller :home do
     post 'home/login' => 'home#authenticate'

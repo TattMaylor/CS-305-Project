@@ -40,4 +40,7 @@ class HomeController < ApplicationController
     @teachers = Teacher.all
     @students = Student.all
   end
+
+  def game
+  end
 end

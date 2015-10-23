@@ -23,4 +23,11 @@ class TeachersController < ApplicationController
     	render 'new'
   	end
 	end
+
+  def destroy
+     @teacher = Teacher.find(params[:id])
+     @teacher.destroy
+ 
+  redirect_to root_path
+  end
 end

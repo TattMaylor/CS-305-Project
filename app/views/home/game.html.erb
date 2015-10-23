@@ -20,13 +20,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-          <li ><%= link_to_unless(session[:current_user_id].nil?, "View Game Chapters", { controller: "home", action: "game" }) %></li>
+          <li ><%= link_to_unless(session[:current_user_id].nil?, "Home", { controller: "home", action: "dashboard" }) %></li>
 					<li ><%= link_to_unless(session[:current_user_id].nil?, "Manage Accounts", { controller: "home", action: "manage" }) %></li>
 					<li ><%= link_to_unless(session[:current_user_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
 				</ul>
 			</div>
 		</nav>
 
-    <div class="jumbotron">
-      <h1>Dashboard!</h1>
-  </div>
+		<div class="jumbotron">
+			<h1>Game stuff here!</h1>
+		</div>

@@ -20,14 +20,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Home", { controller: "home", action: "dashboard" }) %></li>
-          <li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Create Student", { controller: "students", action: "new" }) %></li>
-					<li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Create Teacher", { controller: "teachers", action: "new" }) %></li>
-					<li class="active"><%= link_to_unless(session[:current_user_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
+					<li><%= link_to_unless(session[:current_user_id].nil?, "Home", { controller: "home", action: "dashboard" }) %></li>
+          <li ><%= link_to_unless(session[:current_user_id].nil?, "Create Student", { controller: "students", action: "new" }) %></li>
+					<li ><%= link_to_unless(session[:current_user_id].nil?, "Create Teacher", { controller: "teachers", action: "new" }) %></li>
+					<li ><%= link_to_unless(session[:current_user_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
 				</ul>
 			</div>
 		</nav>
-
+<br>
 <center>
 <TABLE  BORDER="5" WIDTH="50%"   CELLPADDING="4" CELLSPACING="3">
    <TR>
@@ -38,24 +38,27 @@
       <TH><center>First Name</center></TH>
       <TH><center>Last Name</center></TH>
       <TH><center>Email</center></TH>
-      <TH><center>Super</center></TH>
+      <TH><center></center></TH>
 <ul>
 <% @teachers.each do |teacher| %>
    <TR>
       <TD><center> <%= teacher.firstname %></center></TD>
       <TD><center> <%= teacher.lastname %></center></TD>
       <TD><center> <%= teacher.email %></center></TD>
-      <TD><center> <%= teacher.super %></center> </TD>
+      <TD><center> <%= link_to 'Deactivate', teachers_path(teacher),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></center></TD>
    </TR>
+
 <% end %>
 </TABLE>
 </center>
 </ul>
-
+<br>
 <center>
 <TABLE  BORDER="5" WIDTH="50%"   CELLPADDING="4" CELLSPACING="3">
    <TR>
-      <TH COLSPAN="4">
+      <TH COLSPAN="5">
          <H3><center><b>Student Accounts</b></center></H3>
       </TH>
    </TR>
@@ -63,6 +66,7 @@
       <TH><center>Last Name</center></TH>
       <TH><center>Study ID</center></TH>
       <TH><center>Enrollment Status</center></TH>
+      <TH><center></center></TH>
 <ul>
 <% @students.each do |student| %>
    <TR>
@@ -70,9 +74,11 @@
       <TD><center><%= student.lastname %></center></TD>
       <TD><center> <%= student.sid %></center></TD>
       <TD><center> <%= student.enrollment %></center></TD>
+      <TD><center> <%= link_to 'Unenroll', students_path(student),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></center></center></TD>
    </TR>
 <% end %>
 </TABLE>
 </center>
 </ul>
-
