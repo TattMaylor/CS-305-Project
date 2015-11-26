@@ -20,10 +20,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><%= link_to_unless(session[:current_user_id].nil?, "Home", { controller: "home", action: "dashboard" }) %></li>
-          <li ><%= link_to_unless(session[:current_user_id].nil?, "Create Student", { controller: "students", action: "new" }) %></li>
-					<li ><%= link_to_unless(session[:current_user_id].nil?, "Create Teacher", { controller: "teachers", action: "new" }) %></li>
-					<li ><%= link_to_unless(session[:current_user_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
+					<li ><%= link_to_unless(session[:current_teacher_id].nil?, "Home", { controller: "home", action: "dashboard" }) %></li>
+          <li ><%= link_to_unless(session[:current_teacher_id].nil?, "Create Student", { controller: "students", action: "new" }) %></li>
+					<li ><%= link_to_unless(session[:current_teacher_id].nil?, "Create Teacher", { controller: "teachers", action: "new" }) %></li>
+					<li ><%= link_to_unless(session[:current_teacher_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
 				</ul>
 			</div>
 		</nav>
@@ -45,7 +45,7 @@
       <TD><center> <%= teacher.firstname %></center></TD>
       <TD><center> <%= teacher.lastname %></center></TD>
       <TD><center> <%= teacher.email %></center></TD>
-      <TD><center> <%= link_to 'Deactivate', teachers_path(teacher),
+      <TD><center> <%= link_to 'Deactivate', teacher_path(teacher),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></center></TD>
    </TR>
@@ -71,12 +71,12 @@
 <% @students.each do |student| %>
    <TR>
       <TD><center> <%= student.firstname %></center></TD>
-      <TD><center><%= student.lastname %></center></TD>
+      <TD><center> <%= student.lastname %></center></TD>
       <TD><center> <%= student.sid %></center></TD>
       <TD><center> <%= student.enrollment %></center></TD>
-      <TD><center> <%= link_to 'Unenroll', students_path(student),
+      <TD><center> <%= link_to 'Unenroll', student_path(student),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></center></center></TD>
+              data: { confirm: 'Are you sure?' } %></center></TD>
    </TR>
 <% end %>
 </TABLE>

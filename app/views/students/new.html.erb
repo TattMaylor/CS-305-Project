@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track' => true %>
 </head>
 
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-			<div class="container">
+      <div class="container">
          <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -19,49 +19,66 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li ><%= link_to_unless(session[:current_user_id].nil?, "Home", { controller: "home", action: "dashboard" }) %></li>
-					<li ><%= link_to_unless(session[:current_user_id].nil?, "Manage Accounts", { controller: "home", action: "manage" }) %></li>	
-					<li ><%= link_to_unless(session[:current_user_id].nil?, "Logout", { controller: "home", action: "logout" }) %></li>
-				</ul>
-			</div>
-		</nav>
+        <ul class="nav navbar-nav">
+          <li ><%= link_to_unless(session[:current_teacher_id].nil?, "Home", { controller: "home", action: "dashboard" }) %></li>
+          <li ><%= link_to_unless(session[:current_teacher_id].nil?, "Manage Accounts", { controller: "home", action: "manage" }) %></li> 
+          <li ><%= link_to_unless(session[:current_teacher_id].nil?, "Logout", { controller: "home", action: "logout" }) %></li>
+        </ul>
+      </div>
+</nav>
+
 <br>
 <br>
-  <center><h1>Create A New Student</h1></center>
 
+<center><h1>Create A New Student</h1></center>
 
-<%= form_for :newstudent, url: students_new_path do |f| %>
-
-  <% if @student.errors.any? %>
+<%= form_for :newstudent, :html => {:class => "form-horizontal center"} do |f| %>
+  
+   <% if @student.errors.any? %>
     <ul>
     <% @student.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
-  <% end %>
-<div class="container">
-  <div class="row">
-    <div class="Absolute-Center is-Responsive">
-      <div class="col-sm-12 col-md-10 col-md-offset-1">
-<%= f.label :firstname, 'First Name' %>
-<%= f.text_field :firstname %>
+    <% end %>
+    
+  <div class="form-group">
+        <%= f.label :firstname, "First Name:", class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :firstname, class: "form-control" %>
+        </div>
+  </div>
+  <div class="form-group">
+        <%= f.label :lastname, "Last Name:", class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :lastname, class: "form-control" %>
+        </div>
+  </div>
 
-<%= f.label :lastname, 'Last Name' %>
-<%= f.text_field :lastname %>
+  <div class="form-group">
+        <%= f.label :sid, "Study ID:", class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :sid, class: "form-control" %>
+        </div>
+  </div>
 
-<%= f.label :sid, 'Study ID' %>
-<%= f.text_field :sid %>
+  <div class="form-group">
+        <%= f.label :new_password, "Password:", class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.password_field :new_password, class: "form-control" %>
+        </div>
+  </div>
 
-<%= f.label :new_password, 'Password' %>
-<%= f.password_field :new_password %>
+  <div class="form-group">
+        <%= f.label :new_password_confirmation, "Confirm Password:", class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.password_field :new_password_confirmation, class: "form-control" %>
+        </div>
+  </div>
 
-<%= f.label :new_password_confirmation, 'Confirm Password' %>
-<%= f.password_field :new_password_confirmation %>
-
-<center><%= f.submit "Create" %></center>
-</div>
-</div>
-</div>
-</div>
+  <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+          <button type="submit" class="btn btn-lg">Create</button>
+      </div>
+  </div>
 <% end %>

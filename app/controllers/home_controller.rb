@@ -1,39 +1,45 @@
 class HomeController < ApplicationController
+
   def index
   end
 
   def login 
-    if session[:current_user_id] != nil
+    session.delete(:current_student_id)
+    if session[:current_teacher_id] != nil
       redirect_to home_dashboard_path
     end
-  	@user = User.new()
-    flash[:notice] = ["Message 1"]
+    	@user = User.new()
   end
 
   def authenticate
-  	@user = User.find_by(email: params[:login][:email])
-  	encryptedPassword = Digest::SHA2.hexdigest(params[:login][:password])
-    if  encryptedPassword == @user.password
-      session[:current_user_id] = @user.id
-      redirect_to home_dashboard_path
-  	else
-    	render 'login'
+    if User.find_by(email: params[:login][:email]) != nil
+  	 @user = User.find_by(email: params[:login][:email])
+    elsif Teacher.find_by(email: params[:login][:email]) != nil
+      @user = Teacher.find_by(email: params[:login][:email])
     end
+  	 encryptedPassword = Digest::SHA2.hexdigest(params[:login][:password])
+        if  encryptedPassword == @user.password
+          session[:current_teacher_id] = @user.id
+         redirect_to home_dashboard_path
+      	else
+       	render 'login'
+       end
+
   end
 
   def logout
-  	session.delete(:current_user_id)
+  	session.delete(:current_teacher_id)
   	redirect_to root_url
   end
 
   def dashboard
-    if session[:current_user_id] == nil
+    if session[:current_teacher_id] == nil
       redirect_to root_url
     end
   end
 
   def manage
-    if session[:current_user_id] == nil
+    if session[:current_teacher_id] == nil
       redirect_to root_url
     end
 

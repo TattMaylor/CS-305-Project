@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   get 'teachers/new'
   get 'students/new'
   get 'home/game'
+  get 'game/login'
+  get 'game/index'
+  get 'game/logout' => 'game#logout'
+  get 'home/manage' => 'teacher#destroy'
+  delete 'home/manage' => 'teachers#destroy'
+  delete 'home/manage' => 'students#destroy'
 
   controller :home do
     post 'home/login' => 'home#authenticate'
@@ -18,6 +24,10 @@ Rails.application.routes.draw do
 
   controller :students do
     post 'students/new' => 'students#create'
+  end
+
+  controller :game do
+    post 'game/login' => 'game#authenticate'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
