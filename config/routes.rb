@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'home/manage'
   get 'teachers/new'
   get 'students/new'
-  get 'home/game'
+  get 'home/support'
   get 'game/login'
   get 'game/index'
   get 'game/logout' => 'game#logout'

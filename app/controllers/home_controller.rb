@@ -57,6 +57,6 @@ class HomeController < ApplicationController
     @students = Student.all
   end
 
-  def game
+  def support
   end
 end

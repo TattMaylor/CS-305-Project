@@ -12,13 +12,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-          <li ><%= link_to_unless(session[:current_teacher_id].nil?, "Home", { controller: "home", action: "dashboard" }) %></li>
-					<li ><%= link_to_unless(session[:current_teacher_id].nil?, "Manage Accounts", { controller: "home", action: "manage" }) %></li>
-					<li ><%= link_to_unless(session[:current_teacher_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
+          <li ><%= link_to( "Teacher Login", { controller: "home", action: "login" }) %></li>
+					<li ><%= link_to("Student Login", { controller: "game", action: "login" }) %></li>
 				</ul>
 			</div>
 		</nav>
 
 		<div class="jumbotron">
-			<h1>Game stuff here!</h1>
+			<h1>Support information will be here!</h1>
+      <p>Support information can be used for admin assistance and bug reporting.</p>
+      <a href="" class="btn btn-primary btn-lg" role="button">Report Bug</a>
+      <a href="" class="btn btn-primary btn-lg" role="button">Win A Free iPad!</a>
 		</div>
