@@ -10,16 +10,23 @@ class GameController < ApplicationController
 	end
 
 	def authenticate
+    if Student.find_by(sid: params[:login][:sid]) != nil
   	 @student = Student.find_by(sid: params[:login][:sid])
   	 encryptedPassword = Digest::SHA2.hexdigest(params[:login][:password])
         if encryptedPassword == @student.password
           session[:current_student_id] = @student.id
          redirect_to game_index_path
       	else
+        flash[:alert3] = "Incorrect SID or password."
        	render 'login'
-       end
 
-  	end
+       end
+     else 
+      flash[:alert3] = "Incorrect SID or password."
+        render 'login'
+    end
+
+  end
 
     def index
       if session[:current_student_id] == nil
@@ -30,5 +37,8 @@ class GameController < ApplicationController
   	def logout
       session.delete(:current_student_id)
       redirect_to game_login_path
+    end
+
+    def test_one
     end
 end

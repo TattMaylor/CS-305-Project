@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get 'game/index'
   get 'game/logout' => 'game#logout'
   get 'home/manage' => 'teacher#destroy'
+  get 'game/test_one'
+  get 'home/report'
+  get 'home/chapterone'
   delete 'home/manage' => 'teachers#destroy'
   delete 'home/manage' => 'students#destroy'
 
@@ -30,6 +33,10 @@ Rails.application.routes.draw do
     post 'game/login' => 'game#authenticate'
   end
 
+  #controller :report_one do
+    #post 'report_one/new' => 'report_one#create'
+  #end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -37,6 +44,7 @@ Rails.application.routes.draw do
   resources :users
   resources :teachers
   resources :students
+  resources :report_ones
   root 'home#login'
 
   # Example of regular route:

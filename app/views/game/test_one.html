@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Game Test</title>
+</head>
+<script>
+var TL; 
+var TM;
+var TR;
+var ML;
+var M;
+var MR;
+var BL;
+var BM;
+var BR;
+
+function changeImageTL() {
+		TL = 1;
+		if(TL == TM)
+		{	 
+			 var label = document.getElementById("carrotLabel");
+			 label.hidden = false;
+			 var pic = document.getElementById("topLeft");
+			 pic.onclick = null;
+		}
+    var image = document.getElementById('topLeft');
+    if (image.src.indexOf("/assets/word-ace-card-back.jpg") !== -1) {
+        image.src = "/assets/carrot-fb.jpg";
+		
+    } else if(image.src.indexOf("carrot-fb.jpg") !== -1) {
+        image.src = "/assets/word-ace-card-back.jpg";
+		TL = 0;
+    }
+		setTimeout(function(){var image = document.getElementById('topLeft');
+		if(TL == TR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TL = 0;
+		TR = 0;
+		}else if(TL == ML){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TL = 0;
+		ML = 0;
+		}else if(TL == M){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TL = 0;
+		M = 0;
+		}else if(TL == MR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TL = 0;
+		MR = 0;
+		}else if(TL == BL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TL = 0;
+		BL = 0;
+		}else if(TL == BM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TL = 0;
+		BM = 0;
+		}else if(TL == BR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TL = 0;
+		BR = 0;
+		}}, 1500);
+}
+
+function changeImageTM() {
+		TM = 1;
+		if(TM == TL)
+		{	 
+			 var label = document.getElementById("carrotLabel");
+			 label.hidden = false;
+			 var pic = document.getElementById("topMiddle");
+			 pic.onclick = null;
+		}
+    var image = document.getElementById('topMiddle');
+    if (image.src.indexOf("/assets/word-ace-card-back.jpg") !== -1) {
+        image.src = "/assets/carrot-fb.jpg";
+		
+    } else if(image.src.indexOf("carrot-fb.jpg") !== -1) {
+        image.src = "/assets/word-ace-card-back.jpg";
+		TM = 0;
+    }
+	setTimeout(function(){var image = document.getElementById('topMiddle');
+		if(TM == TR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TM = 0;
+		TR = 0;
+		}else if(TM == ML){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TM = 0;
+		ML = 0;
+		}else if(TM == M){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TM = 0;
+		M = 0;
+		}else if(TM == MR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TM = 0;
+		MR = 0;
+		}else if(TM == BL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TM = 0;
+		BL = 0;
+		}else if(TM == BM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TM = 0;
+		BM = 0;
+		}else if(TM == BR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TM = 0;
+		BR = 0;
+		}}, 1500);
+}
+
+function changeImageTR() {
+		TR = 1;
+		if(TR == BM)
+		{	 
+			 var label = document.getElementById("potatoLabel");
+			 label.hidden = false;
+			 var pic = document.getElementById("topRight");
+			 pic.onclick = null;
+		}
+    var image = document.getElementById('topRight');
+    if (image.src.indexOf("/assets/word-ace-card-back.jpg") !== -1) {
+        image.src = "/assets/Potato_wiki.jpg";		
+    } else if(image.src.indexOf("Potato_wiki.jpg") !== -1) {
+        image.src = "/assets/word-ace-card-back.jpg";
+		TR = 0;
+    }
+	setTimeout(function(){var image = document.getElementById('topRight');
+		if(TR == TL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TR = 0;
+		TL = 0;
+		}else if(TR == TM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TR = 0;
+		TM = 0;
+		}else if(TR == ML){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TR = 0;
+		ML = 0;
+		}else if(TR == M){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TR = 0;
+		M = 0;
+		}else if(TR == MR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TR = 0;
+		MR = 0;
+		}else if(TR == BL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TR = 0;
+		BL = 0;
+		}else if(TR == BR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		TR = 0;
+		BR = 0;
+		}}, 1500);
+}
+
+function changeImageML() {
+	    ML = 1;
+		if(ML == BR)
+		{	 
+			 var label = document.getElementById("cornLabel");
+			 label.hidden = false;
+			 var pic = document.getElementById("middleLeft");
+			 pic.onclick = null;
+		}
+    var image = document.getElementById('middleLeft');
+    if (image.src.indexOf("/assets/word-ace-card-back.jpg") !== -1) {
+        image.src = "/assets/corn.jpg";
+    } else if(image.src.indexOf("corn.jpg") !== -1) {
+        image.src = "/assets/word-ace-card-back.jpg";
+		ML = 0;
+    }
+	setTimeout(function(){var image = document.getElementById('middleLeft');
+		if(ML == TL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		ML = 0;
+		TL = 0;
+		}else if(ML == TM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		ML = 0;
+		TM = 0;
+		}else if(ML == TR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		ML = 0;
+		TR = 0;/assets/
+		}else if(ML == M){
+		image.src = "/assets/word-ace-card-back.jpg";
+		ML = 0;
+		M = 0;
+		}else if(ML == MR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		ML = 0;
+		MR = 0;
+		}else if(ML == BL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		ML = 0;
+		BL = 0;
+		}else if(ML == BM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		ML = 0;
+		BM = 0;
+		}}, 1500);
+}
+
+function changeImageM() {
+	M = 1;
+		if(M == BL)
+		{	 
+			 var label = document.getElementById("broccoliLabel");
+			 label.hidden = false;
+			 var pic = document.getElementById("middle");
+			 pic.onclick = null;
+		}
+    var image = document.getElementById('middle');
+    if (image.src.indexOf("/assets/word-ace-card-back.jpg") !== -1) {
+        image.src = "/assets/Broccoli_wiki.jpg";
+    } else if(image.src.indexOf("Broccoli_wiki.jpg") !== -1) {
+        image.src = "/assets/word-ace-card-back.jpg";
+		M = 0;
+    }
+	setTimeout(function(){var image = document.getElementById('middle');
+		if(M == TL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		M = 0;
+		TL = 0;
+		}else if(M == TM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		M = 0;
+		TM = 0;
+		}else if(M == TR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		M = 0;
+		TR = 0;
+		}else if(M == ML){
+		image.src = "/assets/word-ace-card-back.jpg";
+		M = 0;
+		ML = 0;
+		}else if(M == MR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		M = 0;
+		MR = 0;
+		}else if(M == BM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		M = 0;
+		BM = 0;
+		}else if(M == BR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		M = 0;
+		BR = 0;
+		}}, 1500);
+}
+
+function changeImageMR() {
+	
+    var image = document.getElementById('middleRight');
+    if (image.src.indexOf("/assets/word-ace-card-back.jpg") !== -1) {
+        image.src = "/assets/TryAgain.png";
+		MR = 1;
+    } else if(image.src.indexOf("TryAgain.png") !== -1) {
+        image.src = "/assets/word-ace-card-back.jpg";
+		MR = 0;
+    }
+	setTimeout(function(){var image = document.getElementById('middleRight');
+		if(MR == TL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		MR = 0;
+		TL = 0;
+		}else if(MR == TM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		MR = 0;
+		TM = 0;
+		}else if(MR == TR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		MR = 0;
+		TR = 0;
+		}else if(MR == ML){
+		image.src = "/assets/word-ace-card-back.jpg";
+		MR = 0;
+		ML = 0;
+		}else if(MR == M){
+		image.src = "/assets/word-ace-card-back.jpg";
+		MR = 0;
+		M = 0;
+		}
+		else if(MR == BL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		MR = 0;
+		BL = 0;
+		}else if(MR == BM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		MR = 0;
+		BM = 0;
+		}else if(MR == BR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		MR = 0;
+		BR = 0;
+		}}, 1500);
+}
+
+function changeImageBL() {
+	BL = 1;
+		if(BL == M)
+		{	 
+			 var label = document.getElementById("broccoliLabel");
+			 label.hidden = false;
+			 var pic = document.getElementById("bottomLeft");
+			 pic.onclick = null;
+		}
+    var image = document.getElementById('bottomLeft');
+    if (image.src.indexOf("/assets/word-ace-card-back.jpg") !== -1) {
+        image.src = "/assets/Broccoli_wiki.jpg";
+    } else if(image.src.indexOf("Broccoli_wiki.jpg") !== -1) {
+        image.src = "/assets/word-ace-card-back.jpg";
+		BL = 0;
+    }
+	setTimeout(function(){var image = document.getElementById('bottomLeft');
+		if(BL == TL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BL = 0;
+		TL = 0;
+		}else if(BL == TM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BL = 0;
+		TM = 0;
+		}else if(BL == TR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BL = 0;
+		TR = 0;
+		}else if(BL == ML){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BL = 0;
+		ML = 0;
+		}else if(BL == MR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BL = 0;
+		MR = 0;
+		}else if(BL == BM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BL = 0;
+		BM = 0;
+		}else if(BL == BR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BL = 0;
+		BR = 0;
+		}}, 1500);
+}
+
+function changeImageBM() {
+	    BM = 1;
+		if(BM == TR)
+		{	 
+			 var label = document.getElementById("potatoLabel");
+			 label.hidden = false;
+			 var pic = document.getElementById("bottomMiddle");
+			 pic.onclick = null;
+		}
+    var image = document.getElementById('bottomMiddle');
+    if (image.src.indexOf("/assets/word-ace-card-back.jpg") !== -1) {
+        image.src = "/assets/Potato_wiki.jpg";
+    } else if(image.src.indexOf("Potato_wiki.jpg") !== -1) {
+        image.src = "/assets/word-ace-card-back.jpg";
+		BM = 0;
+    }
+	setTimeout(function(){var image = document.getElementById('bottomMiddle');
+		if(BM == TL){
+		image.src = "/assets//assets/word-ace-card-back.jpg";
+		BM = 0;
+		TL = 0;
+		}else if(BM == TM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BM = 0;
+		TM = 0;
+		}else if(BM == ML){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BM = 0;
+		ML = 0;
+		}else if(BM == M){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BM = 0;
+		M = 0;
+		}else if(BM == MR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BM = 0;
+		MR = 0;
+		}else if(BM == BL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BM = 0;
+		BL = 0;
+		}else if(BM == BR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BM = 0;
+		BR = 0;
+		}}, 1500);
+}
+
+function changeImageBR() {
+		BR = 1;
+		if(BR == ML)
+		{	 
+			 var label = document.getElementById("cornLabel");
+			 label.hidden = false;
+			 var pic = document.getElementById("bottomRight");
+			 pic.onclick = null;
+		}
+    var image = document.getElementById('bottomRight');
+    if (image.src.indexOf("/assets/word-ace-card-back.jpg") !== -1) {
+        image.src = "/assets/corn.jpg";
+    } else if(image.src.indexOf("corn.jpg") !== -1) {
+        image.src = "/assets/word-ace-card-back.jpg";
+		BR = 0;
+    }
+	setTimeout(function(){var image = document.getElementById('bottomRight');
+		if(BR == TL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BR = 0;
+		TL = 0;
+		}else if(BR == TM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BR = 0;
+		TM = 0;
+		}else if(BR == TR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BR = 0;
+		TR = 0;
+		}else if(BR == M){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BR = 0;
+		M = 0;
+		}else if(BR == MR){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BR = 0;
+		MR = 0;
+		}else if(BR == BL){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BR = 0;
+		BL = 0;
+		}else if(BR == BM){
+		image.src = "/assets/word-ace-card-back.jpg";
+		BR = 0;
+		BM = 0;
+		}}, 1500);
+}
+
+function recordResults() {
+	var result1 = document.getElementById("q1").value;
+	var result2 = document.getElementById("q2").value;
+	var result3 = document.getElementById("q3").value;
+	var result4 = document.getElementById("q4").value;
+	var total = 4;
+	var correct = 0;
+	var percent = 0;
+	if(result1.toUpperCase() === "CARROT"){
+	correct = correct + 1;
+	}
+	if(result2.toUpperCase() === "POTATO"){
+	correct = correct + 1;
+	}
+	if(result3.toUpperCase() === "CORN"){
+	correct = correct + 1;
+	}
+	if(result4.toUpperCase() === "BROCCOLI"){
+	correct = correct + 1;
+	}
+	
+	percent = (correct/total) * 100;
+	alert("Score: " + percent + "%");
+}
+
+</script>
+<body>
+
+
+
+<h1>This is a test of the game</h1>
+<img id="topLeft" onclick="changeImageTL()" src="/assets/word-ace-card-back.jpg" width="104" height="142">
+<img src="/assets/word-ace-card-back.jpg" onclick="changeImageTM()" id="topMiddle" onclick="changeImageTM()" width="104" height="142">
+<img src="/assets/word-ace-card-back.jpg" onclick="changeImageTR()" id="topRight" width="104" height="142">
+<br>
+<img src="/assets/word-ace-card-back.jpg" onclick="changeImageML()" id="middleLeft" width="104" height="142">
+<img src="/assets/word-ace-card-back.jpg" onclick="changeImageM()" id="middle"width="104" height="142">
+<img src="/assets/word-ace-card-back.jpg" onclick="changeImageMR()" id="middleRight" width="104" height="142">
+<br>
+<img src="/assets/word-ace-card-back.jpg" onclick="changeImageBL()" id="bottomLeft" width="104" height="142">
+<img src="/assets/word-ace-card-back.jpg" onclick="changeImageBM()" id="bottomMiddle" width="104" height="142">
+<img src="/assets/word-ace-card-back.jpg" onclick="changeImageBR()" id="bottomRight" width="104" height="142">
+<br>
+<br>
+<p> Hints: </p>
+<label id = "carrotLabel" for="carrot" hidden = true>Carrot</label><br>
+<label id = "potatoLabel" for="potato" hidden = true>Potato</label><br>
+<label id = "cornLabel"for="corn" hidden = true>Corn</label><br>
+<label id = "broccoliLabel"for="broccoli" hidden = true>Broccoli</label><br>
+
+<br>
+<br>
+  1. <textarea rows = "1" cols = "21" id = "q1" type="text" name="question1"></textarea> This vegetable has edible roots.<br><br><br>
+  2. <textarea rows = "1" cols = "21" id = "q2" type="text" name="question2"></textarea> This vegetable is harvested from under the dirt, and is also known as "spuds".<br><br><br>
+  3. <textarea rows = "1" cols = "21" id = "q3" type="text" name="question3"></textarea> This vegetable has edible seeds, and comes in ears.<br><br><br>
+  4. <textarea rows = "1" cols = "21" id = "q4" type="text" name="question4"></textarea> This vegetable can be eaten whole, and looks like a tiny tree.<br><br><br>
+
+<a href="index" class="btn btn-primary btn-lg" onclick="recordResults()" role="button">Submit</a>
+
+
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-			<div class="container">
+			<div class="container-fluid">
          <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -13,15 +13,19 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
          			 <li ><%= link_to("Teacher Login", { controller: "home", action: "login" }) %></li>
-					 <li ><%= link_to("Forgot Password", { controller: "home", action: "game" }) %></li>
 					 <li ><%= link_to("Support", { controller: "home", action: "game" }) %></li>
 				</ul>
 			</div>
 		</nav>
 
 <div class="jumbotron">
-	<h1> Junior Master Gardener Adventure</h1>
+	<h1> Educational Gardening Assistant</h1>
+  <h2> Student Login </h2>
 </div>
+
+<% if flash[:alert3] %>
+    <div class="alert alert-danger"><%= flash[:alert3] %></div>
+<% end %>
 
 <%= form_for :login, :html => {:class => "form-horizontal center"} do |f| %>
 	<div class="form-group">
@@ -38,7 +42,7 @@
     </div>
     <div class="form-group">
     	<div class="col-md-offset-2 col-md-10">
-      		<button type="submit" class="btn btn-lg">Login</button>
+      		<button type="submit" class="btn btn-primary btn-lg">Login</button>
     	</div>
   	</div>
 <% end %>

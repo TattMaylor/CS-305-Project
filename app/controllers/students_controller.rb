@@ -16,7 +16,8 @@ class StudentsController < ApplicationController
 	def destroy
      @student = Student.find(params[:id])
      @student.destroy
- 
+
   redirect_to home_manage_path
   end
+
 end

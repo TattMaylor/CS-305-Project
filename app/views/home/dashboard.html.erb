@@ -1,5 +1,5 @@
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-			<div class="container">
+			<div class="container-fluid">
          <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -12,13 +12,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-          <li ><%= link_to_unless(session[:current_teacher_id].nil?, "View Game Chapters", { controller: "home", action: "game" }) %></li>
+          <li ><%= link_to_unless(session[:current_teacher_id].nil?, "Reports", { controller: "home", action: "report" }) %></li>
 					<li ><%= link_to_unless(session[:current_teacher_id].nil?, "Manage Accounts", { controller: "home", action: "manage" }) %></li>
 					<li ><%= link_to_unless(session[:current_teacher_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
 				</ul>
 			</div>
-		</nav>
+</nav>
 
-    <div class="jumbotron">
-      <h1>Dashboard!</h1>
-  </div>

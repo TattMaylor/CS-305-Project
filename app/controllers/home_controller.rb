@@ -14,16 +14,26 @@ class HomeController < ApplicationController
   def authenticate
     if User.find_by(email: params[:login][:email]) != nil
   	 @user = User.find_by(email: params[:login][:email])
-    elsif Teacher.find_by(email: params[:login][:email]) != nil
-      @user = Teacher.find_by(email: params[:login][:email])
-    end
-  	 encryptedPassword = Digest::SHA2.hexdigest(params[:login][:password])
+     encryptedPassword = Digest::SHA2.hexdigest(params[:login][:password])
         if  encryptedPassword == @user.password
           session[:current_teacher_id] = @user.id
          redirect_to home_dashboard_path
-      	else
-       	render 'login'
+        else
+        render 'login'
        end
+    elsif Teacher.find_by(email: params[:login][:email]) != nil
+      @user = Teacher.find_by(email: params[:login][:email])
+      encryptedPassword = Digest::SHA2.hexdigest(params[:login][:password])
+        if  encryptedPassword == @user.password
+          session[:current_teacher_id] = @user.id
+         redirect_to home_dashboard_path
+        else
+        render 'login'
+       end
+    else
+      flash[:alert] = "Incorrect email or password."
+      render 'login'
+    end
 
   end
 

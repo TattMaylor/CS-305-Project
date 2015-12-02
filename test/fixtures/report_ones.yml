@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firstname: MyString
+  lastname: MyString
+  qone: 1
+  qtwo: 1
+  qthree: 1
+  qfour: 1
+  right: 1
+  wrong: 1
+  percent: 1
+
+two:
+  firstname: MyString
+  lastname: MyString
+  qone: 1
+  qtwo: 1
+  qthree: 1
+  qfour: 1
+  right: 1
+  wrong: 1
+  percent: 1

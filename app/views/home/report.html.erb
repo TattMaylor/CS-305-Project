@@ -16,9 +16,12 @@
 					<li ><%= link_to_unless(session[:current_teacher_id].nil?, "Manage Accounts", { controller: "home", action: "manage" }) %></li>
 					<li ><%= link_to_unless(session[:current_teacher_id].nil?, "Log Out", { controller: "home", action: "logout" }) %></li>
 				</ul>
-			</div>
-		</nav>
-
-		<div class="jumbotron">
-			<h1>Game stuff here!</h1>
 		</div>
+</nav>
+
+<center><h1>Please select a chapter to view.</h1></center><br>
+<a href="chapterone" class="btn btn-success btn-lg btn-block" role="button">Chapter One Game</a><br>
+<a href="" class="btn btn-warning btn-lg btn-block" role="button">Chapter Two Game</a><br>
+<a href="" class="btn btn-warning btn-lg btn-block" role="button">Chapter Three Game</a><br>
+<a href="" class="btn btn-warning btn-lg btn-block" role="button">Chapter Four Game</a><br>
+<a href="" class="btn btn-danger btn-lg btn-block" role="button">Chapter Five Game</a><br>
