@@ -3,10 +3,10 @@ class Teacher < ActiveRecord::Base
 
   validates :firstname, presence: true
   validates :lastname, presence: true
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, presence: true
   validates :new_password, presence: true, length: { in: 6..20 }
   validates :new_password_confirmation, presence: true
-  validates :new_password, confirmation: true
+  validates :new_password, confirmation: true, presence: true
 
   before_save :encrypt_password
   

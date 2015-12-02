@@ -3,10 +3,10 @@ class Student < ActiveRecord::Base
 
   validates :firstname, presence: true
   validates :lastname, presence: true
-  validates :sid, presence: true, uniqueness: true
+  validates :sid, presence: true, uniqueness: true, length: { in: 6..6}
   validates :new_password, presence: true, length: { in: 6..20 }
   validates :new_password_confirmation, presence: true
-  validates :new_password, confirmation: true
+  validates :new_password, confirmation: true, presence: true
 
   before_save :encrypt_password
   
