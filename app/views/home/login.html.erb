@@ -18,7 +18,7 @@
 			</div>
 		</nav>
 
-<div class="jumbotron">
+<div class="jumbotron welcome">
 	<h1> Educational Gardening Assistant</h1>
   <h2> Teacher Login </h2>
 </div>
@@ -27,6 +27,7 @@
     <div class="alert alert-danger"><%= flash[:alert] %></div>
   <% end %>
 
+<div class="container">
 <%= form_for :login, :html => {:class => "form-horizontal center"} do |f| %>
 	<div class="form-group">
         <%= f.label :email, "Email:", class: "col-md-2 control-label" %>
@@ -45,4 +46,5 @@
       		<button type="submit" class="btn btn-primary btn-lg">Login</button>
     	</div>
   	</div>
+  </div>
 <% end %>
